@@ -40,6 +40,24 @@ var defaultDuration = 55; //Default duration (in minutes) in case the event is m
 
 
 //---------------- DO NOT EDIT BELOW HERE UNLESS YOU REALLY KNOW WHAT YOU'RE DOING --------------------
+
+var Event = function(){
+  //--------------------Properties----------------
+  this.title = "";
+  this.description = "";
+  this.startTime = null;
+  this.endTime = null;
+  this.location = "";
+  this.id = "";
+  this.reminderTimes = new Array();
+  //----------------------------------------------
+}
+
+String.prototype.includes = function(phrase){ 
+  return this.indexOf(phrase) > -1;
+}
+
+
 function Install(){
   ScriptApp.newTrigger("main").timeBased().everyMinutes(howFrequent).create();
 }
